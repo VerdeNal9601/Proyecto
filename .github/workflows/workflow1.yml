@@ -1,4 +1,4 @@
-name: Continuous integration with git hub actions
+name: Practice for the class ADA School
 on:
   push:
     branches:

@@ -1,11 +1,11 @@
-name: Practice for the class ADA School
+name: Continuous integration with git hub
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   test_build:
     runs-on: ubuntu-latest

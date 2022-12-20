@@ -1,8 +1,11 @@
 package com.Mongo.EjemploMongo.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
 import java.time.LocalDate;
-
+import java.util.Objects;
 
 
 public class BookingDto implements Serializable {
@@ -10,39 +13,68 @@ public class BookingDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
+    private String bookingType;
+    private Boolean reserved;
 
-    private String password;
-    private LocalDate disponible;
-    private LocalDate noDisponible;
+    private LocalDate bookingStartDate;
+
+    private LocalDate bookingEndDate;
+
 
     public BookingDto() {
     }
 
-    public BookingDto( LocalDate disponible, LocalDate noDisponible, String password) {
-        this.password= password;
-        this.disponible = disponible;
-        this.noDisponible = noDisponible;
+    public BookingDto(String bookingType, Boolean reserved, LocalDate bookingStartDate, LocalDate bookingEndDate) {
+        this.bookingType = bookingType;
+        this.reserved = reserved;
+        this.bookingStartDate = bookingStartDate;
+        this.bookingEndDate = bookingEndDate;
     }
 
-    public String getPassword(){return password;}
-
-    public void setPassword(String password){
-        this.password= password;
+    public String getBookingType() {
+        return bookingType;
     }
 
-    public LocalDate getDisponible() {
-        return disponible;
+    public void setBookingType(String bookingType) {
+        this.bookingType = bookingType;
     }
 
-    public void setDisponible(LocalDate disponible) {
-        this.disponible = disponible;
+    public Boolean getReserved() {
+        return reserved;
     }
 
-    public LocalDate getNoDisponible() {
-        return noDisponible;
+    public void setReserved(Boolean reserved) {
+        this.reserved = reserved;
     }
 
-    public void setNoDisponible(LocalDate noDisponible) {
-        this.noDisponible = noDisponible;
+    public LocalDate getBookingStartDate() {
+        return bookingStartDate;
     }
+
+    public void setBookingStartDate(LocalDate bookingStartDate) {
+        this.bookingStartDate = bookingStartDate;
+    }
+
+    public LocalDate getBookingEndDate() {
+        return bookingEndDate;
+    }
+
+    public void setBookingEndDate(LocalDate bookingEndDate) {
+        this.bookingEndDate = bookingEndDate;
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

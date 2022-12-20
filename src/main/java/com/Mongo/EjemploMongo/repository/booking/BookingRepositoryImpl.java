@@ -37,8 +37,10 @@ public class BookingRepositoryImpl implements BookingRepository{
     public Booking update(String id, BookingDto bookingDto) {
         Booking bookingFound = findById(id);
         if(bookingFound!=null){
-            bookingFound.setDisponible(bookingDto.getDisponible());
-            bookingFound.setNoDisponible(bookingDto.getNoDisponible());
+            bookingFound.setBookingType(bookingDto.getBookingType());
+            bookingFound.setReserved(bookingDto.getReserved());
+            bookingFound.setBookingStartDate(bookingDto.getBookingStartDate());
+            bookingFound.setBookingEndDate(bookingDto.getBookingEndDate());
             return bookingMongoRepository.save(bookingFound);
         }
         return null;

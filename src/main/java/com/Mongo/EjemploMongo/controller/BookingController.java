@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/v1/booking")
+@RequestMapping("/v1/bookings")
 public class BookingController {
 
     private final BookingService bookingService;
